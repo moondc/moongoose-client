@@ -36,7 +36,7 @@ export class MoongooseClient {
      * @param headers Optional headers for the request.
      * @returns An Observable of the response type.
      */
-    get<Type>(url: string, headers?: Record<string, string>): Observable<Type>;
+    get<Type>(url: string, headers?: {[key: string]: string}): Observable<Type>;
 
     /**
      * Performs a POST request.
@@ -45,7 +45,7 @@ export class MoongooseClient {
      * @param headers Optional headers for the request.
      * @returns An Observable of the response type.
      */
-    post<Type>(url: string, data: any, headers?: Record<string, string>): Observable<Type>;
+    post<Type>(url: string, data: any, headers?: {[key: string]: string}): Observable<Type>;
 }
 
 /**

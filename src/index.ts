@@ -31,7 +31,7 @@ class MoongooseClient {
     }
 
 
-    public get<Type>(url: string, headers?: Record<string, string>): Observable<Type> {
+    public get<Type>(url: string, headers?: {[key: string]: string}): Observable<Type> {
         this.checkInitialized();
         return this.makeRequest<Type>({
             method: 'get',
@@ -39,14 +39,16 @@ class MoongooseClient {
             headers,
         })
     };
-    public post<Type>(url: string, data: any, headers?: Record<string, string>): Observable<Type> {
+
+    public post<Type>(url: string, data: any, headers?: {[key: string]: string}): Observable<Type> {
         this.checkInitialized();
-        return this.makeRequest<Type>({
+        const config = {
             method: 'post',
             url,
             data,
             headers,
-        })
+        }
+        return this.makeRequest<Type>(config);
     };
 
     private makeRequest<Type>(config: AxiosRequestConfig): Observable<Type> {
