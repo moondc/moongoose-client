@@ -10,7 +10,8 @@
   "main": "dist/index.js",
   "types": "src/index.d.ts",
   "files": [
-    "src/index.d.ts","src/index.js"
+    "src/index.d.ts",
+    "src/index.js"
   ],
   "author": "Moongoose",
   "license": "ISC",

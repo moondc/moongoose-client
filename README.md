@@ -56,6 +56,7 @@ tsconfig.js
 
 ### (Maintainers) How to push a new version
 ```
+npm login
 npm run build
 npm publish
 ```
